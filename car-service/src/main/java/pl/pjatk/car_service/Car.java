@@ -4,9 +4,9 @@ public class Car {
     private String brand;
     private String model;
     private String vin;
-    private String standard;
+    private Standard standard;
 
-    public Car(String brand, String model, String vin, String standard) {
+    public Car(String brand, String model, String vin, Standard standard) {
         this.brand = brand;
         this.model = model;
         this.vin = vin;
@@ -17,10 +17,7 @@ public class Car {
         return vin;
     }
 
-    @Override
-    public String toString() {
-        return "Car:" + brand +
-                " " + model +
-                " (" + standard + ")";
+    public Standard getStandard() {
+        return standard;
     }
 }
