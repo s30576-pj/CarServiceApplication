@@ -39,7 +39,7 @@ public class RentalOffice {
         System.out.println("Car is being prepared for: " + rental.getFirstName() + " " + rental.getLastName());
     }
 
-    private boolean isCarAvailable(String vin, LocalDate startDate, LocalDate endDate) {
+    public boolean isCarAvailable(String vin, LocalDate startDate, LocalDate endDate) {
         return rentalStorage.getRentalList().stream().noneMatch(rental ->
                 rental.getCar().getVin().equals(vin) &&
                         (startDate.isBefore(rental.getEndDate()) && endDate.isAfter(rental.getStartDate()))
