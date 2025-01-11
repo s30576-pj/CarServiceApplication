@@ -25,7 +25,6 @@ class RentalOfficeTest {
     private RentalStorage rentalStorage;
 
     @InjectMocks
-    @Spy
     private RentalOffice rentalOffice;
 
     @Test
@@ -34,7 +33,6 @@ class RentalOfficeTest {
         Car car = new Car("BMW", "E92", "VIN123", Standard.NORMAL);
         Rental rental = new Rental(1,"Jan","Kowalski", LocalDate.of(2024,12,10),LocalDate.of(2024,12,15), car);
         when(rentalStorage.getRentalList()).thenReturn(List.of());
-        when(rentalOffice.isCarAvailable(anyString(), any(LocalDate.class), any(LocalDate.class))).thenReturn(true);
 
         //WHEN
         rentalOffice.finalizeRental(rental);
